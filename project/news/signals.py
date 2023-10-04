@@ -10,6 +10,7 @@ from .models import New
 
 @receiver(post_save, sender=New)  # декоратор для сигналов
 def New_created(sender, instance, created, **kwargs):
+    print('Создан товар', instance)
 
     if created:  # при появлении новой публикации
         # получаем email подписчиков этой публикации
